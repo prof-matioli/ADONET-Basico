@@ -8,7 +8,7 @@ namespace ADONET_Projeto1
     {
         static void Main(string[] args)
         {
-            new Program().testaDataView_Five_DeleteRow();
+            new Program().testaConexao();
             Console.WriteLine("\n\nFIM. Pressione qualquer tecla...");
             Console.ReadKey();
         }
@@ -29,7 +29,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"\nOcorreu uma exceção : {ex.Message}\n");
             }
         }
-
         public void testaDataView_Five_DeleteRow()
         {
             SqlConnection connection = null;
@@ -91,7 +90,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"Ocorreu uma exceção : {ex.Message}");
             }
         }
-
         public void testaDataView_Five_UpdateRow()
         {
             SqlConnection connection = null;
@@ -151,8 +149,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"Ocorreu uma exceção : {ex.Message}");
             }
         }
-
-
         public void testaDataView_Four_AddNewRow()
         {
             SqlConnection connection = null;
@@ -210,7 +206,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"Ocorreu uma exceção : {ex.Message}");
             }
         }
-
         public void testaDataView_Three_Filter()
         {
             SqlConnection connection = null;
@@ -264,8 +259,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"Ocorreu uma exceção : {ex.Message}");
             }
         }
-
-
         public void testaDataView_Two_Sorting()
         {
             SqlConnection connection = null;
@@ -317,8 +310,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"Ocorreu uma exceção : {ex.Message}");
             }
         }
-
-
         public void testaDataView_One()
         {
             SqlConnection connection = null;
@@ -368,8 +359,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"Ocorreu uma exceção : {ex.Message}");
             }
         }
-
-
         public void testaGenericExecutaStoredProcedure()
         {
             try
@@ -412,7 +401,6 @@ namespace ADONET_Projeto1
                 Console.WriteLine($"Ocorreu uma exceção : {ex.Message}");
             }
         }
-
         public static DataSet ExecuteStoredProcedureReturnDataSet(string connectionString,
                                  string procedureName, params SqlParameter[] paramterList)
         {
@@ -451,8 +439,6 @@ namespace ADONET_Projeto1
             //Retorna o DataSet para quem chamou o Método Genérico.
             return dataSet;
         }
-
-
         public void testaADOUsingStoredProcedure2()
         {
             SqlConnection connection = null;
@@ -500,7 +486,6 @@ namespace ADONET_Projeto1
             }
 
         }
-
         public void testaADOUsingStoredProcedure()
         {
             SqlConnection connection = null;
@@ -564,7 +549,6 @@ namespace ADONET_Projeto1
             }
 
         }
-
         public void testaStoreProcedureComParametroEntradaSaida()
         {
             SqlConnection connection = null;
@@ -619,7 +603,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
         public void testaStoreProcedureComParametroEntrada()
         {
             SqlConnection connection = null;
@@ -672,8 +655,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
-
         public void testaStoreProcedureSemParametro()
         {
             SqlConnection connection = null;
@@ -715,7 +696,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
         public void testaRemoveDataTableDataSet()
         {
             SqlConnection connection = null;
@@ -783,7 +763,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
         public void testaMetodosDataSetCopyCloneClear()
         {
             SqlConnection connection = null;
@@ -872,7 +851,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
         public void testaDataSetSqlServerMultiTableTableNameExplicito()
         {
             SqlConnection connection = null;
@@ -994,8 +972,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
-
         public void testaDataSetSqlServerMultiTableIndexPosition()
         {
             SqlConnection connection = null;
@@ -1056,8 +1032,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
-
         public void testaDataSetSqlServer()
         {
             SqlConnection connection = null;
@@ -1100,8 +1074,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
-
         public void testaClasseDataSet()
         {
             //Criando a tabela Cliente
@@ -1153,7 +1125,6 @@ namespace ADONET_Projeto1
                     row["Quantidade"]);
             }
         }
-
         public void testaMetodoRejectChanges()
         {
             SqlConnection connection = null;
@@ -1196,7 +1167,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
         public void testaMetodoRemoveDataRow()
         {
             SqlConnection connection = null;
@@ -1237,8 +1207,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
-
         public void testaMetodoDeleteDataRow()
         {
             SqlConnection connection = null;
@@ -1280,7 +1248,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
         public void testaMetodosDataTableCopyClone()
         {
             SqlConnection connection = null;
@@ -1338,7 +1305,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
         public void testaMetodosDataTableRows()
         {
             SqlConnection connection = null;
@@ -1364,8 +1330,6 @@ namespace ADONET_Projeto1
                 connection.Close();
             }
         }
-
-
         public void testaSqlDataTableExemplo1()
         {
 
@@ -1403,8 +1367,6 @@ namespace ADONET_Projeto1
                                   row["nome"]);
             }
         }
-
-
         public void testaSqlDataTableExemplo2()
         {
             DataTable dataTable = new DataTable("professor");
@@ -1449,8 +1411,6 @@ namespace ADONET_Projeto1
 
 
         }
-
-
         public void testaSqlDataAdapterStoredProcedure()
         {
             SqlConnection con = null;
@@ -1476,7 +1436,6 @@ namespace ADONET_Projeto1
                 con.Close();
             }
         }
-
         public void testaSqlDataAdapter()
         {
             SqlConnection con = null;
@@ -1544,9 +1503,6 @@ namespace ADONET_Projeto1
                 con.Close();
             }
         }
-
-
-
         public void testaExecuteNonQuery()
         {
             SqlConnection con = null;
@@ -1578,8 +1534,6 @@ namespace ADONET_Projeto1
                 con.Close();
             }
         }
-
-
         public void testaExecuteScalar()
         {
             SqlConnection con = null;
@@ -1606,8 +1560,6 @@ namespace ADONET_Projeto1
                 con.Close();
             }
         }
-
-
         public void testaExecuteReader()
         {
             SqlConnection con = null;
@@ -1635,7 +1587,6 @@ namespace ADONET_Projeto1
                 con.Close();
             }
         }
-
         public void testaExecuteReaderIndex()
         {
             SqlConnection con = null;
@@ -1665,7 +1616,6 @@ namespace ADONET_Projeto1
                 con.Close();
             }
         }
-
         public void testaExecuteReaderMultiResultSets()
         {
             SqlConnection con = null;
