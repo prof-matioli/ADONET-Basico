@@ -39,12 +39,15 @@ namespace ADONET_Projeto2
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.rdOutro = new System.Windows.Forms.RadioButton();
             this.grpDados = new System.Windows.Forms.GroupBox();
-            this.dgvAlunos = new System.Windows.Forms.DataGridView();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.dgvAlunos = new System.Windows.Forms.DataGridView();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboCurso = new System.Windows.Forms.ComboBox();
             this.grpDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             this.SuspendLayout();
@@ -143,11 +146,13 @@ namespace ADONET_Projeto2
             // 
             // grpDados
             // 
+            this.grpDados.Controls.Add(this.cboCurso);
             this.grpDados.Controls.Add(this.txtEmail);
             this.grpDados.Controls.Add(this.txtNome);
             this.grpDados.Controls.Add(this.rdFem);
             this.grpDados.Controls.Add(this.label1);
             this.grpDados.Controls.Add(this.rdMasc);
+            this.grpDados.Controls.Add(this.label5);
             this.grpDados.Controls.Add(this.label2);
             this.grpDados.Controls.Add(this.rdOutro);
             this.grpDados.Controls.Add(this.txtCelular);
@@ -155,18 +160,9 @@ namespace ADONET_Projeto2
             this.grpDados.Controls.Add(this.label4);
             this.grpDados.Location = new System.Drawing.Point(8, 12);
             this.grpDados.Name = "grpDados";
-            this.grpDados.Size = new System.Drawing.Size(878, 109);
+            this.grpDados.Size = new System.Drawing.Size(878, 152);
             this.grpDados.TabIndex = 9;
             this.grpDados.TabStop = false;
-            // 
-            // dgvAlunos
-            // 
-            this.dgvAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlunos.Location = new System.Drawing.Point(8, 128);
-            this.dgvAlunos.Name = "dgvAlunos";
-            this.dgvAlunos.Size = new System.Drawing.Size(878, 303);
-            this.dgvAlunos.TabIndex = 10;
-            this.dgvAlunos.SelectionChanged += new System.EventHandler(this.dgvAlunos_SelectionChanged);
             // 
             // txtEmail
             // 
@@ -175,6 +171,16 @@ namespace ADONET_Projeto2
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(381, 29);
             this.txtEmail.TabIndex = 2;
+            // 
+            // dgvAlunos
+            // 
+            this.dgvAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlunos.Location = new System.Drawing.Point(8, 181);
+            this.dgvAlunos.Name = "dgvAlunos";
+            this.dgvAlunos.Size = new System.Drawing.Size(878, 250);
+            this.dgvAlunos.TabIndex = 10;
+            this.dgvAlunos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlunos_RowEnter);
+            this.dgvAlunos.SelectionChanged += new System.EventHandler(this.dgvAlunos_SelectionChanged);
             // 
             // btnNovo
             // 
@@ -185,11 +191,12 @@ namespace ADONET_Projeto2
             this.btnNovo.TabIndex = 11;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(156, 447);
+            this.btnSalvar.Location = new System.Drawing.Point(315, 447);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(124, 39);
             this.btnSalvar.TabIndex = 11;
@@ -197,25 +204,56 @@ namespace ADONET_Projeto2
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // btnRefresh
+            // btnUpdate
             // 
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(305, 447);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(124, 39);
-            this.btnRefresh.TabIndex = 11;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(464, 447);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(124, 39);
+            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(454, 447);
+            this.btnCancelar.Location = new System.Drawing.Point(613, 447);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 39);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(162, 447);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(124, 39);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 24);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Curso:";
+            // 
+            // cboCurso
+            // 
+            this.cboCurso.FormattingEnabled = true;
+            this.cboCurso.Location = new System.Drawing.Point(105, 113);
+            this.cboCurso.Name = "cboCurso";
+            this.cboCurso.Size = new System.Drawing.Size(381, 21);
+            this.cboCurso.TabIndex = 9;
             // 
             // Form1
             // 
@@ -223,8 +261,9 @@ namespace ADONET_Projeto2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 498);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvAlunos);
             this.Controls.Add(this.grpDados);
@@ -252,8 +291,11 @@ namespace ADONET_Projeto2
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.ComboBox cboCurso;
+        private System.Windows.Forms.Label label5;
     }
 }
 
