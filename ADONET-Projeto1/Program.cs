@@ -8,7 +8,7 @@ namespace ADONET_Projeto1
     {
         static void Main(string[] args)
         {
-            new Program().testaConexao();
+            new Program().testaDataView_Two_Sorting();
             Console.WriteLine("\n\nFIM. Pressione qualquer tecla...");
             Console.ReadKey();
         }
