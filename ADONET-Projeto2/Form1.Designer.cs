@@ -39,15 +39,15 @@ namespace ADONET_Projeto2
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.rdOutro = new System.Windows.Forms.RadioButton();
             this.grpDados = new System.Windows.Forms.GroupBox();
+            this.cboCurso = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dgvAlunos = new System.Windows.Forms.DataGridView();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboCurso = new System.Windows.Forms.ComboBox();
             this.grpDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             this.SuspendLayout();
@@ -164,6 +164,15 @@ namespace ADONET_Projeto2
             this.grpDados.TabIndex = 9;
             this.grpDados.TabStop = false;
             // 
+            // cboCurso
+            // 
+            this.cboCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCurso.FormattingEnabled = true;
+            this.cboCurso.Location = new System.Drawing.Point(105, 113);
+            this.cboCurso.Name = "cboCurso";
+            this.cboCurso.Size = new System.Drawing.Size(381, 28);
+            this.cboCurso.TabIndex = 9;
+            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +180,16 @@ namespace ADONET_Projeto2
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(381, 29);
             this.txtEmail.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 24);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Curso:";
             // 
             // dgvAlunos
             // 
@@ -236,24 +255,6 @@ namespace ADONET_Projeto2
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 24);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Curso:";
-            // 
-            // cboCurso
-            // 
-            this.cboCurso.FormattingEnabled = true;
-            this.cboCurso.Location = new System.Drawing.Point(105, 113);
-            this.cboCurso.Name = "cboCurso";
-            this.cboCurso.Size = new System.Drawing.Size(381, 21);
-            this.cboCurso.TabIndex = 9;
             // 
             // Form1
             // 

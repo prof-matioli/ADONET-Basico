@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -20,6 +22,7 @@ namespace ADONET_Projeto2
         SqlDataAdapter daCurso;
         DataTable dtCurso;
         SqlCommandBuilder builder;
+        AutoCompleteStringCollection source;
 
         Font f = new Font("Arial", 14);
 
@@ -65,6 +68,20 @@ namespace ADONET_Projeto2
             cboCurso.Font = f;
             cboCurso.ValueMember = "idCurso";
             cboCurso.DisplayMember = "descricao";
+
+            /* ********************Configura a propriedade AUTO-COMPLETE do Combobox *************  */
+            source = new AutoCompleteStringCollection();
+            foreach (DataRow rw in dtCurso.Rows)
+            {
+                string descr = rw.Field<String>("descricao");
+                source.Add(descr);
+            }
+
+            cboCurso.AutoCompleteCustomSource = source;
+            cboCurso.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cboCurso.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            /* ***********************************************************************************  */
+
 
             habilitar();
 
@@ -128,7 +145,8 @@ namespace ADONET_Projeto2
                 //Preenche o DataTable com os dados vindos do Data Source, atavés do Data Adapter
                 int v = daCurso.Fill(dtCurso);
                 cboCurso.DataSource = dtCurso;
-             }
+ 
+            }
             catch (Exception)
             {
                 MessageBox.Show("Falha ao acessar o banco de dados!", "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -182,7 +200,7 @@ namespace ADONET_Projeto2
             else rdOutro.Checked = true;
 
             //posiciona o combobox
-            cboCurso.SelectedItem = dgvAlunos.CurrentRow.Cells[1].Value;
+            cboCurso.SelectedValue = dgvAlunos.CurrentRow.Cells[1].Value;
             cboCurso.Refresh();
 
         }
